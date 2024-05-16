@@ -364,3 +364,40 @@ body {
   opacity: 1;
   pointer-events: all;
 }
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+  background-image: url("../images/hero-bg-bottom.png"),
+    url("../images/hero-bg.png"), var(--gradient-1);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: -280px bottom, center, center;
+  background-size: auto, cover, auto;
+  padding-block-start: 120px;
+  padding-block-end: var(--section-padding);
+}
+
+.hero-content {
+  margin-block-end: 50px;
+}
+
+.hero-subtitle {
+  color: var(--chrome-yellow);
+  font-family: var(--ff-source-sans-pro);
+  font-size: var(--fs-7);
+  margin-block-end: 15px;
+}
+
+.hero-title {
+  color: var(--white);
+  font-size: var(--fs-1);
+  margin-block-end: 20px;
+}
+
+.hero-text {
+  color: var(--white);
+  font-size: var(--fs-8);
+  margin-block-end: 30px;
+}
