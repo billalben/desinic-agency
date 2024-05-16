@@ -279,6 +279,16 @@ body {
   position: fixed;
   background-color: var(--white);
   box-shadow: 0 2px 30px hsla(0, 0%, 0%, 0.1);
+  animation: slideDown 0.5s var(--cubic-out) forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .header .container {
@@ -307,7 +317,7 @@ body {
   left: -280px;
   width: 100%;
   max-width: 280px;
-  min-height: 100%;
+  min-height: 100vh;
   padding: 20px;
   visibility: hidden;
   z-index: 2;
@@ -353,6 +363,7 @@ body {
 .overlay {
   position: fixed;
   inset: 0;
+  min-height: 100vh;
   background-color: var(--black_70);
   z-index: 1;
   opacity: 0;
@@ -737,4 +748,30 @@ body {
 
 .copyright-link:is(:hover, :focus) {
   text-decoration: none;
+}
+
+/*-----------------------------------*\
+  #GO TO TOP
+\*-----------------------------------*/
+
+.go-top {
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  background-color: var(--winter-sky);
+  color: var(--white);
+  font-size: 2rem;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: -3px 3px 15px var(--winter-sky_50);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+.go-top.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-15px);
 }
