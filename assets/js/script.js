@@ -9,40 +9,57 @@ const navbar = document.querySelector("[data-navbar]");
 const navCloseBtn = document.querySelector("[data-nav-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
 
-const elemArr = [navCloseBtn, overlay, navOpenBtn];
+function setupNavbarToggle() {
+  const elemArr = [navCloseBtn, overlay, navOpenBtn];
 
-for (let i = 0; i < elemArr.length; i++) {
-  elemArr[i].addEventListener("click", function () {
-    navbar.classList.toggle("active");
-    overlay.classList.toggle("active");
+  for (let i = 0; i < elemArr.length; i++) {
+    elemArr[i].addEventListener("click", function () {
+      navbar.classList.toggle("active");
+      overlay.classList.toggle("active");
 
-    navbar.classList.contains("active")
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "auto");
-  });
+      navbar.classList.contains("active") &&
+      overlay.classList.contains("active")
+        ? (document.body.style.overflow = "hidden")
+        : (document.body.style.overflow = "auto");
+    });
+  }
 }
+
+window.addEventListener("resize", function () {
+  if (window.innerWidth <= 992) setupNavbarToggle();
+});
+
+// Call setupNavbarToggle initially if the window width is already less than or equal to 992px
+if (window.innerWidth <= 992) setupNavbarToggle();
 
 /**
  * toggle navbar & overlay when click any navbar-link
  */
 
-const navbarLinks = document.querySelectorAll("[data-navbar-link]");
+function setupNavbarLinks() {
+  const navbarLinks = document.querySelectorAll("[data-navbar-link]");
 
-for (let i = 0; i < navbarLinks.length; i++) {
-  navbarLinks[i].addEventListener("click", function () {
-    navbar.classList.toggle("active");
-    overlay.classList.toggle("active");
+  for (let i = 0; i < navbarLinks.length; i++) {
+    navbarLinks[i].addEventListener("click", function () {
+      navbar.classList.remove("active");
+      overlay.classList.remove("active");
 
-    navbar.classList.contains("active")
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "auto");
-  });
+      document.body.style.overflow = "auto";
+    });
+  }
 }
 
-// /**
-//  * header & go-top-btn active
-//  * when window scroll down to 400px
-//  */
+window.addEventListener("resize", function () {
+  if (window.innerWidth <= 992) setupNavbarLinks();
+});
+
+// Call setupNavbarLinks initially if the window width is already less than or equal to 992px
+if (window.innerWidth <= 992) setupNavbarLinks();
+
+/**
+ * header & go-top-btn active
+ * when window scroll down to 400px
+ */
 
 const header = document.querySelector("[data-header]");
 const goTopBtn = document.querySelector("[data-go-top]");
@@ -56,4 +73,3 @@ window.addEventListener("scroll", function () {
     goTopBtn.classList.remove("active");
   }
 });
-
