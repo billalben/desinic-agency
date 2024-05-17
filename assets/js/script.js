@@ -51,3 +51,10 @@ window.addEventListener("scroll", function () {
     goTopBtn.classList.remove("active");
   }
 });
+
+/**
+ * dynamic copyright year
+ */
+
+const currentYear = new Date().getFullYear();
+document.querySelector(".copyright-year").textContent = currentYear;

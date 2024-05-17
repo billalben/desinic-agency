@@ -746,6 +746,10 @@ body.nav-active {
   color: var(--white);
 }
 
+.copyright-year {
+  display: inline-block;
+}
+
 .copyright-link {
   display: inline-block;
   text-decoration: underline;
@@ -779,6 +783,7 @@ body.nav-active {
   visibility: visible;
   opacity: 1;
   transform: translateY(-15px);
+  user-select: none;
 }
 
 /*-----------------------------------*\
