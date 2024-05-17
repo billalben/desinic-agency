@@ -18,7 +18,7 @@ Check out the live demo of the website: [Desinic Live Demo](https://billalben.gi
 
 - **CSS:** For styling and layout, including responsive design techniques.
 
-- **JavaScript:** For interactivity, including the slider and accordion functionality.
+- **JavaScript:** For interactivity, functionality.
 
 ## Getting Started
 
