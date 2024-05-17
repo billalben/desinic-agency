@@ -149,6 +149,10 @@ body {
   font-size: 1.6rem;
 }
 
+body.nav-active {
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
